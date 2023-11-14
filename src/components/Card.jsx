@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom"
-
 export function Card ( {title, description, link} ) {
 
     return (
@@ -8,7 +6,7 @@ export function Card ( {title, description, link} ) {
                 <div className="card-body">
                     <h2 className="card-title fs-5">{title}</h2>
                     <p className="card-text">{description}</p>
-                    <Link to={link} className="btn btn-primary">Go</Link>
+                    <a href={link} className="btn btn-primary">Go</a>
                 </div>
             </div>
         </div>

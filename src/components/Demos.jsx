@@ -1,5 +1,6 @@
 import { Card } from "./Card";
 import logoAE86 from '../assets/alexestudio86.svg';
+import { dataDemos } from './dataDemos.js'
 
 
 export function Demos ( ) {
@@ -15,26 +16,14 @@ export function Demos ( ) {
                 </div>
             </div>
             <div className="row m-0">
-                <Card
-                    title       =   "CAD Grupo Constructor"
-                    description =   'x'
-                    link        =   'CADGrupoConstructor'
-                />
-                <Card
-                    title       =   'Nortathem'
-                    description =   'x'
-                    link        =   'nortathem' 
-                />
-                <Card
-                    title       =   'Offer Online'
-                    description =   'x'
-                    link        =   'offerOnline'
-                />
-                <Card
-                    title       =   'Restaurantes'
-                    description =   'x'
-                    link        =   'restaurantes'
-                />
+                { dataDemos.map( (demo, index) => (
+                    <Card
+                        key         =   {index}
+                        title       =   {demo.title}
+                        description =   {demo.description}
+                        link        =   {demo.link}
+                    />
+                )) }
             </div>
         </div>
     )
