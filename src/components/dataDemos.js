@@ -5,7 +5,7 @@ export const dataDemos = [
         link        :   'restaurantes'
     },{
         title       :   "CAD Grupo Constructor",
-        description :   'x',
+        description :   'xyz',
         link        :   'CADGrupoConstructor'
     },{
         title       :   'Nortathem',
