@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 export function Navbar ( ){
     return (
         <nav className="navbar navbar-expand-lg fixed-top" style={ {zIndex: 5} }>
@@ -5,7 +7,7 @@ export function Navbar ( ){
                 <div className="d-flex">
                     <ul className="nav nav-pills nav-fill">
                         <li className="nav-item">
-                            <a className="nav-link text-uppercase active" aria-current="page" href='#' >my Work</a>
+                            <Link to={'MyWork'} className="nav-link text-uppercase active" aria-current="page" >my Work</Link>
                         </li>
                         <li className="nav-item">
                             <a className="nav-link text-uppercase" href="#" >About me</a>
