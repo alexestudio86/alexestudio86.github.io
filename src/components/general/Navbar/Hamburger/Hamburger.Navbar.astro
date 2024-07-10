@@ -1,0 +1,43 @@
+---
+const {forId} = Astro.props;
+---
+
+<label class="lab" for={forId}>
+    <span></span>
+    <span></span>
+    <span></span>
+</label>
+
+
+<style>
+
+    @media (width <= 768px) {
+        label {
+            display:none;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 5px;
+            font-size: var(--fontSize-theme-large);
+            z-index: 5;
+            display: flex;
+            --active: 0;
+        }
+        label > span {
+            width: 25px;
+            height: 3px;
+            background: var(--color-theme-four);
+            transition: 0.3s;
+            display: block;
+        }
+        /* Animación de la hamburguesa a "X" */
+        label span:nth-child(1) {
+            transform: translateY(calc(var(--active) * 8px)) rotate(calc(var(--active) * 45deg));
+        }
+        label span:nth-child(2) {
+            opacity: calc(1 - var(--active));
+        }
+        label span:nth-child(3) {
+            transform: translateY(calc(var(--active) * -8px)) rotate(calc(var(--active) * -45deg));
+        }
+    }
+</style>

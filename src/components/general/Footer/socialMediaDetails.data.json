@@ -1,0 +1,15 @@
+[
+    {
+        "title":    "Blogger",
+        "url":      "https://alexestudio86.blogspot.com",
+        "icon":     "blogger"
+    },{
+        "title":    "Facebook",
+        "url":      "https://facebook.com/alexestudio86",
+        "icon":     "facebook"
+    },{
+        "title":    "X",
+        "url":      "https://x.com/alexestudio86",
+        "icon":     "twitter"
+    }
+]

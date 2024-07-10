@@ -1,0 +1,39 @@
+---
+
+import BaseHead from "@components/general/Head/BaseHead.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import Navbar from "@components/general/Navbar/Navbar.astro";
+import menuItems from "@components/general/Navbar/navbarItems.data.json";
+import brandLogo from "@components/general/Navbar/logo-alexestudio86.png";
+import Footer from "@src/components/general/Footer/Footer.astro";
+
+---
+
+<html lang="es">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+
+    <Navbar menuItems={menuItems}  brandLogo={brandLogo} />
+
+    <main>
+      <slot />
+    </main>
+    <!-- <Footer /> -->
+
+    <Footer />
+
+  </body>
+</html>
+
+<style>
+
+  main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+</style>

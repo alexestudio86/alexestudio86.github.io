@@ -1,0 +1,40 @@
+---
+
+import Layout from "../layouts/Layout.astro";
+import Article from "@components/general/Articles/Article.astro";
+
+---
+
+<Layout>
+  <div class="container">
+    <h1>Proyectos</h1>
+    <p>Hecha un ojo a mis proyectos</p>
+    <div class="articles">
+      <Article/>
+    </div>
+  </div>
+</Layout>
+
+<style >
+  
+  h1 {
+    font-size:      var(--fontSize-theme-xlarge);
+    text-transform: uppercase;
+  }
+
+  p {
+    font-size:  var(--fontSize-theme-large);
+    padding:    10px 0;
+  }
+
+  .articles {
+    display:                grid;
+    grid-template-columns:  repeat(auto-fit,minmax(350px, 1fr));
+    gap:                    10px;
+  }
+
+  .container {
+    padding: 0 20px;
+  }
+
+</style>

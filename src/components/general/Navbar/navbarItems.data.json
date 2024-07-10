@@ -1,0 +1,6 @@
+[
+  { "link": "/products", "text": "Productos" },
+  { "link": "/about-us", "text": "Acerca de" },
+  { "link": "/contact", "text": "Contacto" },
+  { "link": "blog.alexestudio86.com", "text": "Blog" }
+]

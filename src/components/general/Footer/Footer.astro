@@ -1,0 +1,51 @@
+---
+
+import socialMediaDetails from "./socialMediaDetails.data.json";
+import icons from "./socialIcons/socialMediaIcons.js";
+
+---
+
+<footer>
+    <div class="container">
+        <div>
+            Created By: ALexEstudio86
+        </div>
+        <ul>
+            {socialMediaDetails.map( (smd) => (
+                <li>
+                    <a title={smd.title} href={smd.url}>
+                        {icons[smd.icon] && <icons[smd.icon] size={'var(--fontSize-theme-large)'} />}
+                    </a>
+                </li>
+            ))}
+        </ul>
+    </div>
+</footer>
+
+<style>
+
+    footer {
+        padding: 20px;
+    }
+    
+    footer > div.container {
+        background: var(--color-theme-one);
+        padding: 10px;
+        display: grid;
+        border-radius: 10px;
+        grid-template-columns: 1fr 1fr;
+        justify-items: center;
+    }
+
+    footer > div > ul {
+        list-style-type: none;
+        display: flex;
+        gap: 5px;
+    }
+
+    footer > div > ul > li > a {
+        text-decoration: none;
+        filter: grayscale(100%);
+    }
+
+</style>

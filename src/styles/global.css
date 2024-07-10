@@ -1,0 +1,35 @@
+:root {
+  /* Theme Colors */
+  --color-theme-one:      #000000;
+  --color-theme-two:      #13245d;
+  --color-theme-three:    #104343;
+  --color-theme-four:     #00ffff;
+  --fontSize-theme-small:   12px;
+  --fontSize-theme-medium:  16px;
+  --fontSize-theme-large:   24px;
+  --fontSize-theme-xlarge:  28px;
+  --fontSize-theme-big:     32px;
+  /* Base */
+  --color-white:          #ffffff;
+  --color-link:           #104343;
+}
+
+
+html {
+  font-family:  Inter, sans-serif;
+}
+
+body {
+  background:         linear-gradient(45deg, var(--color-theme-one), var(--color-theme-two));
+  background-size:    cover;
+  color:              var(--color-white);
+  display:            grid;
+  min-height:         100dvh;
+  grid-template-rows: auto 1fr auto;
+}
+
+.container {
+  width:      100%;
+  max-width:  1200px;
+  margin:     auto;
+}

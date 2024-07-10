@@ -1,0 +1,19 @@
+[
+    {
+        "title":        "Restaurantes",
+        "description":  "Sitio con templates dirigido para web app simples y funcionales para pequeñas y medianas empresas",
+        "url":          "/restaurantes"
+    },{
+        "title":        "CAD Grupo Constructor",
+        "description":  "Sitio web de constructora para muestras arquitectónicas",
+        "url":          "/CADGrupoConstructor"
+    },{
+        "title":        "Lift Apoyo",
+        "description":  "Sitio web diseñado de recolección de coletas y apoyos de beneficencia",
+        "url":          "www.liftapoyo.mx"
+    },{
+        "title":        "Offer Online",
+        "description":  "Tienda en línea de diferentes productos importados",
+        "url":          "/offerOnline"
+    }
+]
