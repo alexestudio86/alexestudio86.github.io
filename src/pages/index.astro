@@ -1,40 +1,51 @@
 ---
 
 import Layout from "../layouts/Layout.astro";
-import Article from "@components/general/Articles/Article.astro";
+import Services from "@components/index/services/Services.astro";
+import projectIcons from "@components/index/projects/projectsIcons.js";
 
 ---
 
 <Layout>
-  <div class="container">
-    <h1>Proyectos</h1>
-    <p>Hecha un ojo a mis proyectos</p>
-    <div class="articles">
-      <Article/>
+  <main>
+    <div class="container">
+      <h1>Servicios</h1>
+      <Services/>
+      <p>
+        <a href="/projects">Ver proyectos {projectIcons.southEast && <projectIcons.southEast size="var(--fontSize-theme-medium)" />}</a>
+      </p>
     </div>
-  </div>
+  </main>
 </Layout>
 
 <style >
-  
+
+  main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
   h1 {
     font-size:      var(--fontSize-theme-xlarge);
     text-transform: uppercase;
+    padding: 20px 0;
   }
 
   p {
-    font-size:  var(--fontSize-theme-large);
-    padding:    10px 0;
+    text-align: right;
+    font-size:  var(--fontSize-theme-medium);
+    padding:    20px 0;
+  }
+  
+  a {
+    text-decoration:  none;
+    color:            var(--color-theme-four)
   }
 
-  .articles {
-    display:                grid;
-    grid-template-columns:  repeat(auto-fit,minmax(350px, 1fr));
-    gap:                    10px;
-  }
-
-  .container {
-    padding: 0 20px;
+  a:hover {
+    color:          white;
   }
 
 </style>

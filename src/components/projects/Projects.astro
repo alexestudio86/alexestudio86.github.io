@@ -1,0 +1,69 @@
+---
+
+import projectsItems from "./projectsItems.data.json";
+import projectsIcons from "./projectsIcons.js";
+
+---
+
+<div class="articles">
+    {
+        projectsItems.map( (project) => (
+            <article>
+                <header>
+                    <h2>{project.title}</h2>
+                </header>
+                <section>
+                    <p>{project.description}</p>
+                </section>
+                <footer>
+                    Soy un footer
+                </footer>
+            </article>
+        ))
+    }
+</div>
+
+<style>
+
+    .articles {
+        display:                grid;
+        grid-template-columns:  repeat(auto-fit,minmax(350px, 1fr));
+        grid-template-rows:     repeat(1fr);
+        gap:                    10px;
+    }
+
+    article {
+        background:         var(--color-theme-one);
+        border-radius:      10px;
+        border:             1px solid rgb(54, 54, 54);
+        display:            flex;
+        flex-direction:     column;
+        justify-content:    space-between;
+        height:             200px;
+        max-height:         15vh;
+        position: relative;
+        transition:         transform 0.3s ease;
+        header {
+            padding:            10px;
+            h1 {
+                font-size:          var(--fontSize-theme-large);
+            }
+        }
+        section {
+            padding:            10px;
+            p {
+                font-size:          var(--fontSize-theme-medium);
+            }
+        }
+        footer {
+            padding:            10px;
+            background:         var(--color-theme-two);
+            font-size:          var(--fontSize-theme-medium);
+        }
+    }
+
+    article:hover {
+        transform:          scale(1.05);
+    }
+
+</style>

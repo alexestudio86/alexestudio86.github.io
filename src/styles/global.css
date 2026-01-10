@@ -12,6 +12,7 @@
   /* Base */
   --color-white:          #ffffff;
   --color-link:           #104343;
+  --color-light-gray:     #f1f1f1;
 }
 
 
@@ -32,4 +33,5 @@ body {
   width:      100%;
   max-width:  1200px;
   margin:     auto;
+  padding: 0 20px;
 }

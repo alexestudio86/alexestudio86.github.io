@@ -17,23 +17,9 @@ import Footer from "@src/components/general/Footer/Footer.astro";
 
     <Navbar menuItems={menuItems}  brandLogo={brandLogo} />
 
-    <main>
-      <slot />
-    </main>
-    <!-- <Footer /> -->
+    <slot />
 
     <Footer />
 
   </body>
 </html>
-
-<style>
-
-  main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-</style>

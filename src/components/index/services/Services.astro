@@ -1,0 +1,96 @@
+---
+
+import servicesItems from "./servicesItems.data.json";
+import icons from "./servicesIcons.js";
+
+---
+
+
+<div class="articles">
+    { servicesItems.length > 0 && servicesItems.map( (service) => (
+        <article>
+            {icons[service.icon] && <icons[service.icon] size={'var(--fontSize-theme-large)'} />}
+            <h2>{service.title}</h2>
+            <p>{service.shortDesc}</p>
+            <button type="button" commandfor={service.id} command="show-modal"></button>
+        </article>
+    )) }
+</div>
+
+
+<style>
+
+    .articles {
+        display:                grid;
+        grid-template-columns:  repeat(auto-fit,minmax(350px, 1fr));
+        gap:                    10px;
+    }
+
+    article {
+        background:         var(--color-theme-one);
+        border-radius:      10px;
+        border:             1px solid rgb(54, 54, 54);
+        padding:            10px;
+        display:            flex;
+        flex-direction:     column;
+        justify-content:    space-between;
+        height:             200px;
+        max-height:         15vh;
+        position: relative;
+        transition:         transform 0.3s ease;
+        h1 {
+            font-size:          var(--fontSize-theme-large);
+        }
+        p {
+            font-size:          var(--fontSize-theme-medium);
+        }
+        button {
+            position:           absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            opacity:            0;
+            cursor:             pointer;
+        }
+    }
+
+    article:hover {
+        transform:          scale(1.05);
+    }
+
+    dialog {
+        position: absolute;
+        top: 50%;             /* Posiciona el borde superior al 50% */
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: all 0.3s ease-in-out;
+        border: none;
+        width: min(90%, 420px);
+        box-shadow: 0 20px 60px rgba(0,0,0,.3);
+    }
+
+    /* Fondo oscuro */
+    dialog::backdrop {
+        background: rgba(0, 0, 0, 0.4);
+    }
+
+    dialog > * {
+        padding: 20px;
+    }
+
+    dialog *:nth-child(2) {
+        background: var(--color-light-gray);
+    }
+
+    dialog > header {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    dialog > header > button {
+        padding: 8px 10px;
+        font-size: var(--fontSize-theme-medium);
+        cursor: pointer;
+    }
+
+</style>

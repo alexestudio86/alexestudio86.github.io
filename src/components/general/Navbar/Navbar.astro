@@ -8,7 +8,7 @@ const { menuItems, brandLogo } = Astro.props;
 <nav>
   <div class="container">
     <div id="navbar">
-      <a href="#">
+      <a href="/">
         <img src={brandLogo.src} height="40" width="auto" alt="Logo Alex Estudio 86">
       </a>
       <input type="checkbox" id="chkToggle"></input>
@@ -31,7 +31,7 @@ const { menuItems, brandLogo } = Astro.props;
     /*top: 0;*/
     width: 100%;
     z-index: 3;
-    padding: 20px;
+    padding: 20px 0;
   }
 
   #navbar {

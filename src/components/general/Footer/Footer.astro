@@ -1,7 +1,7 @@
 ---
 
 import socialMediaDetails from "./socialMediaDetails.data.json";
-import icons from "./socialIcons/socialMediaIcons.js";
+import icons from "./socialMediaIcons.js";
 
 ---
 
@@ -11,7 +11,7 @@ import icons from "./socialIcons/socialMediaIcons.js";
             Created By: ALexEstudio86
         </div>
         <ul>
-            {socialMediaDetails.map( (smd) => (
+            {socialMediaDetails.length > 0 && socialMediaDetails.map( (smd) => (
                 <li>
                     <a title={smd.title} href={smd.url}>
                         {icons[smd.icon] && <icons[smd.icon] size={'var(--fontSize-theme-large)'} />}

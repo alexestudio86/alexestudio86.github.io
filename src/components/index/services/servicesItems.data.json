@@ -1,0 +1,21 @@
+[
+    {
+        "id":           "A0B1C2",
+        "title":        "Desarrollo Web",
+        "shortDesc":    "Creación y/o diseño de paginas web, plantillas para blogger o wordpress",
+        "longDesc":     ["Creación de páginas web (creación y manejo de catálogos de productos, ventas en línea)", "Administración y manejo de tiendas digitales en plataformas de ventas (vende a través de linio, amazon, mercado libre)", "Presencia y manejo de redes sociales (manejo de cuentas para facebook for business, twitter, instagram)", "Presencia y manejo de fichas empresarias (aparece en google maps, bing, facebook places etc)", "E-mail marketing", "Campañas de google ads, facebook ads", "Reporte y análisis de Google Analytics y google search console"],
+        "icon":         "code"
+    },{
+        "id":           "D3E4F5",
+        "title":        "Marketing Digital",
+        "shortDesc":    "Presencia en internet, creación de páginas web y mas...",
+        "longDesc":     ["Creación de sitios web: Diseño personalizado y solución de necesecidades para sitios web, implementación de herramienta para comercio electrónico", "Creación de plantillas Blogger: Diseño y/o creación de modernas plantillas para blogger", "Creación de plantillas wordpress: Diseño y/o creación de modernas plantillas para wordpress"],
+        "icon":         "marketing"
+    },{
+        "id":           "G6H7I8",
+        "title":        "Edición de Medios Digitales",
+        "shortDesc":    "Preparación de medios y optimización de formatos",
+        "longDesc":     ["Edición de video con efectos de transiciones, manejo de tiempos (efectos de reversa, cámara lenta), filtros (blanco y negro)", "Edición de fotografía, retoques digitales, filtros (blanco y negro, sepia)", "Edición musical, remix para 15 años, obras escolares, recortes de canciones, manejo de tiempos (efectos de reversa etc)"],
+        "icon":         "edition"
+    }
+]
