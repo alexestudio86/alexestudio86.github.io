@@ -3,11 +3,11 @@ import AdsClick from "@src/assets/icons/AdsClick.fontsGoogle.astro";
 import VideoCameraBackAdd from "@src/assets/icons/VideoCameraBackAdd.fontsGoogle.astro";
 
 
-const icons = {
+const servicesIcons = {
     code:   Code,
     marketing: AdsClick,
     edition: VideoCameraBackAdd
 };
 
 
-export default icons;
+export default servicesIcons;

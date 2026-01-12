@@ -1,0 +1,78 @@
+---
+
+const {service} = Astro.props;
+import servicesImages from "../servicesImages.js";
+
+---
+
+
+<dialog id={service.id} >
+    <header>
+        <h2>{service.title}</h2>
+        <button commandfor={service.id} command="close">&times;</button>
+    </header>
+    <section>
+        <img alt={service.title} src={servicesImages[service.item].src} width={'100px'} height={'100px'} style="width:100%; height:200px; object-fit:cover" />
+        <ul>
+            {service.longDesc.map( (s) => (
+                <li>{s}</li>
+            ))}
+        </ul>
+    </section>
+</dialog>
+
+
+<style>
+
+    dialog {
+        position:   absolute;
+        top:        50%;             /* Posiciona el borde superior al 50% */
+        left:       50%;
+        transform:  translate(-50%, -50%);
+        transition: all 0.3s ease-in-out;
+        border:     none;
+        width:      min(90%, 420px);
+        box-shadow: 0 20px 60px rgba(0,0,0,.3);
+    }
+
+    /* Fondo oscuro */
+    dialog::backdrop {
+        background: rgba(0, 0, 0, 0.4);
+    }
+
+    dialog > *:nth-child(2) {
+        border:         2px solid var(--color-light-gray);
+    }
+
+    dialog > * {
+        display:        flex;
+        align-items:    center;
+        padding:        20px;
+    }
+
+    dialog > header {
+        display:            flex;
+        justify-content:    space-between;
+    }
+
+    dialog > header > button {
+        padding:        8px 10px;
+        font-size:      var(--fontSize-theme-medium);
+        cursor:         pointer;
+    }
+
+    dialog > section {
+        flex-direction:     column;
+    }
+
+    dialog > section > ul {
+        list-style-type:    none;
+        border:             1px solid #ccc !important;
+    }
+
+    dialog > section > ul > li {
+        padding:        8px 16px;
+        border-bottom:  1px solid #ddd;
+    }
+
+</style>

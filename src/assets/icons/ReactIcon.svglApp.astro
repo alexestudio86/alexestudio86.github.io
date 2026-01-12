@@ -1,8 +1,9 @@
 ---
-const { size = '24px' } = Astro.props;
+const { svgTitle = 'React', size = '24px' } = Astro.props;
 ---
 
 <svg  viewBox="0 0 569 512" xmlns:xlink="http://www.w3.org/1999/xlink" style=`width: ${size}; heigth: ${size}`>
+    {svgTitle && <title>{svgTitle}</title>}
     <g fill="none" fill-rule="evenodd">
         <g transform="translate(-227, -256)" fill="#58C4DC" fill-rule="nonzero">
             <g transform="translate(227, 256)">

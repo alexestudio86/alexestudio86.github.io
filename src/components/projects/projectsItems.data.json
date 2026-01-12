@@ -2,28 +2,28 @@
     {
         "id":           "AAA123",
         "title":        "Restaurantes",
-        "description":  "Sitio con templates dirigido para web app simples y funcionales para pequeñas y medianas empresas",
-        "url":          "/restaurantes",
+        "longDesc":     "Sitio con templates dirigido para web app simples y funcionales para pequeñas y medianas empresas",
+        "slug":          "/restaurantes",
         "featured":     "true",
-        "tech":         ["react", "fontAwesome"]
+        "icons":         ["vite", "react", "fontAwesome"]
     },{
         "id":           "BBB123",
         "title":        "CAD Grupo Constructor",
-        "description":  "Sitio web de constructora para muestras arquitectónicas",
-        "url":          "/CADGrupoConstructor",
+        "longDesc":     "Sitio web de constructora para muestras arquitectónicas",
+        "slug":          "/CADGrupoConstructor",
         "featured":     "true",
-        "tech":         ["react"]
+        "icons":         ["react"]
     },{
         "id":           "CCC123",
         "title":        "Lift Apoyo",
-        "description":  "Sitio web diseñado de recolección de coletas y apoyos de beneficencia",
-        "url":          "www.liftapoyo.mx",
-        "tech":         ["react"]
+        "longDesc":     "Sitio web diseñado de recolección de coletas y apoyos de beneficencia",
+        "slug":          "https://liftapoyo.mx",
+        "icons":         ["react"]
     },{
         "id":           "DDD123",
         "title":        "Offer Online",
-        "description":  "Tienda en línea de diferentes productos importados",
-        "url":          "/offerOnline",
-        "tech":         ["react"]
+        "longDesc":     "Tienda en línea de diferentes productos importados",
+        "slug":          "/offerOnline",
+        "icons":         ["react"]
     }
 ]
