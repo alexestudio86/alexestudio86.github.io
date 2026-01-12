@@ -4,11 +4,11 @@
   --color-theme-two:      #13245d;
   --color-theme-three:    #104343;
   --color-theme-four:     #00ffff;
-  --fontSize-theme-small:   12px;
-  --fontSize-theme-medium:  16px;
-  --fontSize-theme-large:   24px;
-  --fontSize-theme-xlarge:  28px;
-  --fontSize-theme-big:     32px;
+  --fontSize-theme-small:   0.75rem;
+  --fontSize-theme-medium:  1rem;
+  --fontSize-theme-large:   1.5rem;
+  --fontSize-theme-xlarge:  1.75rem;
+  --fontSize-theme-big:     2rem;
   /* Base */
   --color-white:          #ffffff;
   --color-link:           #104343;
