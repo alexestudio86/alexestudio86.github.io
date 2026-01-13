@@ -1,6 +1,6 @@
 import Vite from "@src/assets/icons/Vite.svglApp.astro";
 import ReactIcon from "@src/assets/icons/ReactIcon.svglApp.astro";
-import FontAwesome from "@src/assets/icons/FontAwesome.FontAwesome.astro";
+import FontAwesome from "@src/assets/icons/FontAwesome.fontAwesome.astro";
 
 
 const projectsIcons = {
