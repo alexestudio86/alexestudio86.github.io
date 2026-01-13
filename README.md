@@ -13,3 +13,5 @@ Consume svg directo
 ## Styles
 
 Chrome no tiene soporte para usar variables css directamente en widht y height para svg´s, pero se soluciona con estilos inline
+
+.
