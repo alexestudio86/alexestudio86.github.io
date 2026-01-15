@@ -34,7 +34,7 @@
             },{
                 "category": "CSS",
                 "logo":     "css",
-                "fw":       []
+                "fw":       ["w3Schools", "fontAwesome"]
             },{
                 "category":"JS",
                 "logo":     "js",

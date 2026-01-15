@@ -1,0 +1,36 @@
+---
+import projectIcons from "./projectsIcons.js";
+---
+
+<p>
+    <!-- Carga de los svgs desde el principio para reciclarlos, filtrando únicamente los que aparecen en éste componente -->
+    {
+        <projectIcons.southEast techFW={'southEast'} />
+    }
+    <a href="/projects">Ver proyectos <span>
+            <svg style={`width:var(--fontSize-theme-medium); height:var(--fontSize-theme-medium)`}>
+                <use href={`#southEast-logo-symbol`} />
+            </svg>
+        </span>
+    </a>
+</p>
+
+
+<style>
+
+  p {
+    text-align: right;
+    font-size:  var(--fontSize-theme-medium);
+    padding:    20px 0;
+  }
+
+  a {
+    text-decoration:  none;
+    color:            var(--color-theme-four)
+  }
+
+  a:hover {
+    color:          white;
+  }
+
+</style>

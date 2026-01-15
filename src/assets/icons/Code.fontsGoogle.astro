@@ -1,8 +1,10 @@
 ---
-const { svgTitle, size = '24px' } = Astro.props;
+const { techFW } = Astro.props;
 ---
 
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="#e3e3e3" style=`width: ${size}; height: ${size}`>
-    {svgTitle && <title>{svgTitle}</title>}
-    <path d="M320-240 80-480l240-240 57 57-184 184 183 183-56 56Zm320 0-57-57 184-184-183-183 56-56 240 240-240 240Z"/>
+<svg xmlns="http://www.w3.org/2000/svg" style=`display:none`>
+    <symbol id={`${techFW}-logo-symbol`} fill="#e3e3e3" viewBox="0 -960 960 960" >
+        <title>Desarrollo Web</title>
+        <path d="M320-240 80-480l240-240 57 57-184 184 183 183-56 56Zm320 0-57-57 184-184-183-183 56-56 240 240-240 240Z"/>
+    </symbol>
 </svg>

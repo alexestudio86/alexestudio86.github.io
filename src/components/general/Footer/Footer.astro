@@ -1,20 +1,42 @@
 ---
 
-import socialMediaDetails from "./socialMediaDetails.data.json";
-import icons from "./socialMediaIcons.js";
+import socialMediaItems from "./socialMediaItems.data.json";
+import socialMediaIcons from "./socialMediaIcons.js";
+
+const uniqueIcon = [
+    ...new Set(
+        socialMediaItems.flatMap( (smItem) => 
+            smItem.icon
+        )
+    )
+];
+
+console.log('ae86: ', uniqueIcon)
 
 ---
 
+
 <footer>
+    <!-- Carga de los svgs desde el principio para reciclarlos, filtrando únicamente los que aparecen en éste componente -->
+    {
+        uniqueIcon.map( (svgIcon) => {
+            const Component = socialMediaIcons[svgIcon];
+            return Component
+            ? <Component techFW={svgIcon} />
+            : null;
+        } )
+    }
     <div class="container">
         <div>
             Created By: ALexEstudio86
         </div>
         <ul>
-            {socialMediaDetails.length > 0 && socialMediaDetails.map( (smd) => (
+            {socialMediaItems.length > 0 && socialMediaItems.map( (smI) => (
                 <li>
-                    <a title={smd.title} href={smd.url}>
-                        {icons[smd.icon] && <icons[smd.icon] size={'var(--fontSize-theme-large)'} />}
+                    <a title={smI.title} href={smI.url}>
+                        <svg style={`width:var(--fontSize-theme-large); height:var(--fontSize-theme-large)`}>
+                            <use href={`#${smI.icon}-logo-symbol`} />
+                        </svg>
                     </a>
                 </li>
             ))}

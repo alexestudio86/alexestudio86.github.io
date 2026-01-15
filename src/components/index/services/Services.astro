@@ -4,18 +4,38 @@ import servicesItems from "./servicesItems.data.json";
 import servicesIcons from "./servicesIcons.js";
 import ServicesDialog from "./servicesDialog/ServicesDialog.astro";
 
+const uniqueItem = [
+    ...new Set(
+        servicesItems.flatMap( (service) => 
+            service.item
+        )
+    )
+];
+
 ---
 
-
 <div class="articles">
+    <!-- Carga de los svgs desde el principio para reciclarlos, filtrando únicamente los que aparecen en éste componente -->
+    {
+        uniqueItem.map( (svgIcon) => {
+            const Component = servicesIcons[svgIcon];
+            return Component
+            ? <Component techFW={svgIcon} />
+            : null;
+        } )
+    }
     { servicesItems.length > 0 && servicesItems.map( (service) => (
         <article>
             <div>
-                {servicesIcons[service.item] && <servicesIcons[service.item] size={'var(--fontSize-theme-large)'} />}
+                <div>
+                    <svg style={`width:var(--fontSize-theme-jumbo); height:var(--fontSize-theme-jumbo)`}>
+                        <use href={`#${service.item}-logo-symbol`} />
+                    </svg>
+                </div>
+                <h2>{service.title}</h2>
+                <p>{service.shortDesc}</p>
+                <button type="button" commandfor={service.id} command="show-modal"></button>
             </div>
-            <h2>{service.title}</h2>
-            <p>{service.shortDesc}</p>
-            <button type="button" commandfor={service.id} command="show-modal"></button>
         </article>
         <ServicesDialog service={service} />
     )) }
@@ -31,16 +51,23 @@ import ServicesDialog from "./servicesDialog/ServicesDialog.astro";
     }
 
     article {
+        padding:            10px;
         background:         var(--color-theme-one);
         border-radius:      10px;
         border:             1px solid rgb(54, 54, 54);
-        padding:            10px;
+        position:           relative;
+    }
+
+    article:hover {
+        transform:          scale(1.05);
+    }
+
+    article > div {
         display:            flex;
         flex-direction:     column;
         justify-content:    space-between;
         height:             200px;
         max-height:         15vh;
-        position:           relative;
         div {
             display: flex;
             flex-direction: column;
@@ -61,10 +88,6 @@ import ServicesDialog from "./servicesDialog/ServicesDialog.astro";
             opacity:            0;
             cursor:             pointer;
         }
-    }
-
-    article:hover {
-        transform:          scale(1.05);
     }
 
 </style>

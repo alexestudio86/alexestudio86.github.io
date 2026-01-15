@@ -4,10 +4,10 @@ import X from "@src/assets/icons/X.svglApp.astro";
 
 
 
-const icons = {
+const socialMediaIcons = {
     facebook: FacebookIcon,
     blogger: BloggerIcon,
     x: X
 };
 
-export default icons;
+export default socialMediaIcons;

@@ -3,8 +3,27 @@
 import projectsItems from "./projectsItems.data.json";
 import projectsIcons from "./projectsIcons.js";
 
+const uniqueFw = [
+    ...new Set(
+        projectsItems.flatMap( (project) => 
+            project.tech.flatMap( t =>
+                t.fw
+            )
+        )
+    )
+];
+
 ---
 
+<!-- Carga de los svgs desde el principio para reciclarlos, filtrando únicamente los que aparecen en éste componente -->
+{
+    uniqueFw.map( (svgIcon) => {
+        const Component = projectsIcons[svgIcon];
+        return Component
+        ? <Component techFW={svgIcon} />
+        : null;
+    } )
+}
 <div class="articles">
     {
         projectsItems.map( (project) => (
@@ -26,12 +45,14 @@ import projectsIcons from "./projectsIcons.js";
                     ) }
                     <div>
                         {project.tech.map( (t, i) => (
-                            <section id={`panel${i}`}>{t.fw.map( (icn, idx) => {
+                            <section id={`panel${i}`}>{t.fw.map( (icn) => {
                                 const Component = projectsIcons[icn];
                                 return Component
                                 ? (
                                     <span>
-                                        <Component size={'var(--fontSize-theme-large)'} />
+                                        <svg style={`width:var(--fontSize-theme-large); height:var(--fontSize-theme-large)`}>
+                                            <use href={`#${icn}-logo-symbol`} />
+                                        </svg>
                                     </span>
                                   )
                                 : null;
@@ -43,6 +64,7 @@ import projectsIcons from "./projectsIcons.js";
         ))
     }
 </div>
+
 
 <style>
 
@@ -100,9 +122,11 @@ import projectsIcons from "./projectsIcons.js";
         font-size:          var(--fontSize-theme-medium);
     }
 
+    /*
     article > footer > input {
-        /*display:        none;*/
+        display:        none;
     }
+    */
 
     article > footer > input:nth-of-type(1):checked ~ div > section:nth-of-type(1),
     article > footer > input:nth-of-type(2):checked ~ div > section:nth-of-type(2),

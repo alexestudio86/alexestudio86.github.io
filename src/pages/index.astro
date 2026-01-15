@@ -2,18 +2,17 @@
 
 import Layout from "../layouts/Layout.astro";
 import Services from "@components/index/services/Services.astro";
-import projectIcons from "@components/index/projects/projectsIcons.js";
+import Projects from "@components/index/projects/Projects.astro";
 
 ---
+
 
 <Layout>
   <main>
     <div class="container">
       <h1>Servicios</h1>
-      <Services/>
-      <p>
-        <a href="/projects">Ver proyectos {projectIcons.southEast && <projectIcons.southEast size="var(--fontSize-theme-medium)" />}</a>
-      </p>
+      <Services />
+      <Projects />
     </div>
   </main>
 </Layout>
@@ -31,21 +30,6 @@ import projectIcons from "@components/index/projects/projectsIcons.js";
     font-size:      var(--fontSize-theme-xlarge);
     text-transform: uppercase;
     padding: 20px 0;
-  }
-
-  p {
-    text-align: right;
-    font-size:  var(--fontSize-theme-medium);
-    padding:    20px 0;
-  }
-  
-  a {
-    text-decoration:  none;
-    color:            var(--color-theme-four)
-  }
-
-  a:hover {
-    color:          white;
   }
 
 </style>
