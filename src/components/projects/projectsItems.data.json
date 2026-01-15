@@ -5,25 +5,81 @@
         "longDesc":     "Sitio con templates dirigido para web app simples y funcionales para pequeñas y medianas empresas",
         "slug":          "/restaurantes",
         "featured":     "true",
-        "icons":         ["vite", "react", "fontAwesome"]
+        "tech":         [
+            {
+                "category": "HTML",
+                "logo":     "html",
+                "fw":       ["astro"]
+            },{
+                "category": "CSS",
+                "logo":     "css",
+                "fw":       ["w3Schools", "fontAwesome"]
+            },{
+                "category": "JS",
+                "logo":     "js",
+                "fw":       ["react"]
+            }
+        ]
     },{
         "id":           "BBB123",
         "title":        "CAD Grupo Constructor",
         "longDesc":     "Sitio web de constructora para muestras arquitectónicas",
         "slug":          "/CADGrupoConstructor",
         "featured":     "true",
-        "icons":         ["react"]
+        "tech":         [
+            {
+                "category": "HTML",
+                "logo":     "html",
+                "fw":       ["astro"]
+            },{
+                "category": "CSS",
+                "logo":     "css",
+                "fw":       []
+            },{
+                "category":"JS",
+                "logo":     "js",
+                "fw":       ["react"]
+            }
+        ]
     },{
         "id":           "CCC123",
         "title":        "Lift Apoyo",
         "longDesc":     "Sitio web diseñado de recolección de coletas y apoyos de beneficencia",
         "slug":          "https://liftapoyo.mx",
-        "icons":         ["react"]
+        "tech":         [
+            {
+                "category": "HTML",
+                "logo":     "html",
+                "fw":       ["astro"]
+            },{
+                "category": "CSS",
+                "logo":     "css",
+                "fw":       []
+            },{
+                "category": "JS",
+                "logo":     "js",
+                "fw":       ["react"]
+            }
+        ]
     },{
         "id":           "DDD123",
         "title":        "Offer Online",
         "longDesc":     "Tienda en línea de diferentes productos importados",
         "slug":          "/offerOnline",
-        "icons":         ["react"]
+        "tech":         [
+            {
+                "category": "HTML",
+                "logo":     "html",
+                "fw":       ["astro"]
+            },{
+                "category": "CSS",
+                "logo":     "css",
+                "fw":       []
+            },{
+                "category": "JS",
+                "logo":     "js",
+                "fw":       ["react"]
+            }
+        ]
     }
 ]
