@@ -1,9 +1,10 @@
 :root {
+
   /* Theme Colors */
   --color-theme-one:      #000000;
   --color-theme-two:      #13245d;
-  --color-theme-three:    #104343;
-  --color-theme-four:     #00ffff;
+  --color-theme-three:    #145757;
+  --color-theme-four:     #007bff;
   --fontSize-theme-small:   0.75rem;
   --fontSize-theme-medium:  1rem;
   --fontSize-theme-large:   1.5rem;
@@ -11,20 +12,25 @@
   --fontSize-theme-big:     2rem;
   --fontSize-theme-jumbo:   4rem;
   /* Base */
-  --color-white:          #ffffff;
-  --color-link:           #104343;
+  --color-dark:           #0d1017; 
+  --color-light:          #ffffff;
+  --color-link:           #00ffff;
   --color-light-gray:     #f1f1f1;
+  /* Shadow Colors */
+  --color-shadow-one:     rgba(0, 255, 255, 0.6);
+  --color-shadow-two:     rgba(0, 123, 255, 0.5);
+
 }
 
 
 html {
-  font-family:  Inter, sans-serif;
+  font-family:        Inter, sans-serif;
 }
 
 body {
   background:         linear-gradient(45deg, var(--color-theme-one), var(--color-theme-two));
   background-size:    cover;
-  color:              var(--color-white);
+  color:              var(--color-light);
   display:            grid;
   min-height:         100dvh;
   grid-template-rows: auto 1fr auto;

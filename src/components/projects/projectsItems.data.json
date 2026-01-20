@@ -7,16 +7,13 @@
         "featured":     "true",
         "tech":         [
             {
-                "category": "HTML",
-                "logo":     "html",
+                "category": "html",
                 "fw":       ["astro"]
             },{
-                "category": "CSS",
-                "logo":     "css",
+                "category": "css",
                 "fw":       ["w3Schools", "fontAwesome"]
             },{
-                "category": "JS",
-                "logo":     "js",
+                "category": "js",
                 "fw":       ["react"]
             }
         ]
@@ -28,16 +25,13 @@
         "featured":     "true",
         "tech":         [
             {
-                "category": "HTML",
-                "logo":     "html",
+                "category": "html",
                 "fw":       ["astro"]
             },{
-                "category": "CSS",
-                "logo":     "css",
+                "category": "css",
                 "fw":       ["w3Schools", "fontAwesome"]
             },{
-                "category":"JS",
-                "logo":     "js",
+                "category":"js",
                 "fw":       ["react"]
             }
         ]
@@ -48,16 +42,13 @@
         "slug":          "https://liftapoyo.mx",
         "tech":         [
             {
-                "category": "HTML",
-                "logo":     "html",
+                "category": "html",
                 "fw":       ["astro"]
             },{
-                "category": "CSS",
-                "logo":     "css",
+                "category": "css",
                 "fw":       []
             },{
-                "category": "JS",
-                "logo":     "js",
+                "category": "js",
                 "fw":       ["react"]
             }
         ]
@@ -68,16 +59,13 @@
         "slug":          "/offerOnline",
         "tech":         [
             {
-                "category": "HTML",
-                "logo":     "html",
+                "category": "html",
                 "fw":       ["astro"]
             },{
-                "category": "CSS",
-                "logo":     "css",
+                "category": "css",
                 "fw":       []
             },{
-                "category": "JS",
-                "logo":     "js",
+                "category": "js",
                 "fw":       ["react"]
             }
         ]

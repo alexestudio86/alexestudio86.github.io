@@ -5,10 +5,14 @@ import projectsIcons from "./projectsIcons.js";
 
 const uniqueFw = [
     ...new Set(
-        projectsItems.flatMap( (project) => 
-            project.tech.flatMap( t =>
+        projectsItems.flatMap( project => [
+            ...project.tech.flatMap( t =>
                 t.fw
+            ),
+                ...project.tech.flatMap( t =>
+                t.category
             )
+        ] 
         )
     )
 ];
@@ -40,9 +44,24 @@ const uniqueFw = [
                 <footer>
                     { project.tech.map( (t, i) => (
                         <input type="radio" name={project.id} id={`${project.id}${i}`} checked={i === 0 && true }/>
-                        <label for={`${project.id}${i}`}>{t.category}</label>
                         )
                     ) }
+                    <div>
+                        { project.tech.map( (t, i) => {
+                            const Component = projectsIcons[t.category];
+                            return Component
+                            ? (
+                                <label for={`${project.id}${i}`}>
+                                    <svg style={`width:var(--fontSize-theme-large); height:var(--fontSize-theme-large)`}>
+                                        <use href={`#${t.category}-logo-symbol`} />
+                                    </svg>
+                                </label>
+                            )
+                            :
+                            null;
+                            }
+                        ) }
+                    </div>
                     <div>
                         {project.tech.map( (t, i) => (
                             <section id={`panel${i}`}>{t.fw.map( (icn) => {
@@ -75,17 +94,19 @@ const uniqueFw = [
     }
 
     article {
-        background:         var(--color-theme-one);
-        border-radius:      10px;
+        background:         var(--color-dark);
         border:             1px solid rgb(54, 54, 54);
+        border-radius:      0.75rem;
         display:            flex;
         flex-direction:     column;
         justify-content:    space-between;
-        transition:         transform 0.3s ease;
+        border:             1px solid #333;
+        transition:         all 0.4s ease;
+        overflow:           hidden;
     }
 
     article:hover {
-        transform:          scale(1.05);
+        border-color:   var(--color-theme-three);
     }
 
     article > div {
@@ -118,30 +139,69 @@ const uniqueFw = [
     }
 
     article > footer {
-        background:         var(--color-theme-two);
-        font-size:          var(--fontSize-theme-medium);
+        background:             var(--color-theme-two);
+        font-size:              var(--fontSize-theme-medium);
+        display:                grid;
+        grid-template-columns:  100px 1fr;
+        border-radius:          0 0 0.75rem 0.75rem;
     }
 
-    /*
-    article > footer > input {
+    /* Footer */
+    article > footer > input[type="radio"] {
         display:        none;
     }
-    */
+
+    /* Footer | Left Section */
+    article > footer > div:first-of-type {
+        display:        flex;
+        flex-direction: column;
+        gap:            0.2rem;
+        padding:        0.2rem 0.25rem;
+    }
+
+    article > footer > div:first-of-type > label {
+        cursor:         pointer;
+        padding:        0.1rem;
+        text-align:     center;
+        box-shadow:     1px 1px var(--color-theme-three), -1px -1px var(--color-dark);
+        filter:         grayscale(100%);
+    }
+
+    article > footer > div:first-of-type > label:hover {
+        filter:     grayscale(0);
+        box-shadow:     1px 1px var(--color-dark), -1px -1px var(--color-theme-three);
+    }
+
+    article > footer > input:nth-of-type(1):checked ~ div > label:nth-of-type(1),
+    article > footer > input:nth-of-type(2):checked ~ div > label:nth-of-type(2),
+    article > footer > input:nth-of-type(3):checked ~ div > label:nth-of-type(3) {
+        filter:     grayscale(0);
+        box-shadow:         none;
+    }
+
+    /* Footer | Right Section */
+    article > footer > div:nth-of-type(2) {
+        padding:        0.2rem;
+    }
+
+    article > footer > div > section {
+        display:        none;
+        box-shadow:     1px 1px var(--color-theme-three), -1px -1px var(--color-dark);
+    }
 
     article > footer > input:nth-of-type(1):checked ~ div > section:nth-of-type(1),
     article > footer > input:nth-of-type(2):checked ~ div > section:nth-of-type(2),
     article > footer > input:nth-of-type(3):checked ~ div > section:nth-of-type(3) {
-        display:        flex;
-        flex-direction: row;
-        gap:            5px;
-    }
-
-    article > footer > div > section {
-        display:    none;
+        display:            flex;
+        flex-direction:     row;
+        height:             100%;
+        justify-content:    center; /* Centra horizontalmente */
+        align-items:        center;
     }
 
     article > footer > div > section > span {
         filter:     grayscale(100%);
+        padding:    0.2rem;
     }
 
     article > footer > div > section > span:hover {
