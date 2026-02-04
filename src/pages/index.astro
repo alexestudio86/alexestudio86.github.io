@@ -1,19 +1,16 @@
 ---
 
-import Layout from "../layouts/Layout.astro";
-import HomepageServices from "@components/homepage/homepageServices/HomepageServices.astro";
-import HomepageProjects from "@components/homepage/homepageProjects/HomepageProjects.astro";
+import Layout from "@sites/main/layouts/Layout.astro";
+import HomepageServices from "@sites/main/components/homepage/HomepageServices/index.astro";
+import HomepageProjects from "@sites/main/components/homepage/HomepageProjects/index.astro";
 
 ---
 
 
 <Layout>
   <main>
-    <div class="container">
-      <h1>Servicios</h1>
-      <HomepageServices />
-      <HomepageProjects />
-    </div>
+    <HomepageServices />
+    <HomepageProjects />
   </main>
 </Layout>
 

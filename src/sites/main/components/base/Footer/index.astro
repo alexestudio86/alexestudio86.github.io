@@ -1,0 +1,71 @@
+---
+
+import socialMediaItems from "./socialMediaItems.data.json";
+import socialMediaIcons from "./socialMediaIcons.js";
+
+const uniqueIcon = [
+    ...new Set(
+        socialMediaItems.flatMap( (smItem) => 
+            smItem.icon
+        )
+    )
+];
+
+---
+
+
+<footer>
+    <!-- Carga de los svgs desde el principio para reciclarlos, filtrando únicamente los que aparecen en éste componente -->
+    {
+        uniqueIcon.map( (svgIcon) => {
+            const Component = socialMediaIcons[svgIcon];
+            return Component
+            ? <Component techFW={svgIcon} />
+            : null;
+        } )
+    }
+    <div class="container">
+        <div>
+            Created By: ALexEstudio86
+        </div>
+        <ul>
+            {socialMediaItems.length > 0 && socialMediaItems.map( (smI) => (
+                <li>
+                    <a title={smI.title} href={smI.url}>
+                        <svg style={`width:var(--fontSize-theme-large); height:var(--fontSize-theme-large)`}>
+                            <use href={`#${smI.icon}-logo-symbol`} />
+                        </svg>
+                    </a>
+                </li>
+            ))}
+        </ul>
+    </div>
+</footer>
+
+<style>
+
+    footer {
+        padding: 20px;
+    }
+    
+    footer > div.container {
+        background: var(--color-dark);
+        padding: 10px;
+        display: grid;
+        border-radius: 10px;
+        grid-template-columns: 1fr 1fr;
+        justify-items: center;
+    }
+
+    footer > div > ul {
+        list-style-type: none;
+        display: flex;
+        gap: 5px;
+    }
+
+    footer > div > ul > li > a {
+        text-decoration: none;
+        filter: grayscale(100%);
+    }
+
+</style>

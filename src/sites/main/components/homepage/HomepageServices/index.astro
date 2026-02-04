@@ -1,0 +1,99 @@
+---
+
+import servicesItems from "./homepageServicesItems.data.json";
+import servicesIcons from "./homepageServicesIcons.js";
+import ServicesDialog from "./HomepageServicesDialog/index.astro";
+
+const uniqueItem = [
+    ...new Set(
+        servicesItems.flatMap( service => 
+            service.icon
+        )
+    )
+];
+
+---
+
+<section class="container">
+    <h1>Servicios</h1>
+    <div class="articles">
+        <!-- Carga de los svgs desde el principio para reciclarlos, filtrando únicamente los que aparecen en éste componente -->
+        {
+            uniqueItem.map( (svgIcon) => {
+                const Component = servicesIcons[svgIcon];
+                return Component
+                ? <Component techFW={svgIcon} />
+                : null;
+            } )
+        }
+        { servicesItems.length > 0 && servicesItems.map( (service) => (
+            <article>
+                <div>
+                    <div>
+                        <svg style={`width:var(--fontSize-theme-jumbo); height:var(--fontSize-theme-jumbo)`}>
+                            <use href={`#${service.icon}-logo-symbol`} />
+                        </svg>
+                    </div>
+                    <h2>{service.title}</h2>
+                    <p>{service.shortDesc}</p>
+                    <button type="button" commandfor={service.id} command="show-modal"></button>
+                </div>
+            </article>
+            <ServicesDialog service={service} />
+        )) }
+    </div>
+</section>
+
+
+<style>
+
+    .articles {
+        display:                grid;
+        grid-template-columns:  repeat(auto-fit,minmax(250px, 1fr));
+        gap:                    10px;
+    }
+
+    article {
+        position:           relative;
+        padding:            10px;
+        background:         var(--color-dark);
+        border-radius:      10px;
+        border:             1px solid rgb(54, 54, 54);
+        transition:         all 0.4s ease;
+    }
+    
+    article:hover {
+        border-color:       var(--color-theme-four);
+        box-shadow:         0 0 15px var(--color-shadow-two);
+        transform:          scale(1.05);
+    }
+
+    article > div {
+        display:            flex;
+        flex-direction:     column;
+        justify-content:    space-between;
+        height:             200px;
+        max-height:         20vh;
+        div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        transition:         transform 0.3s ease;
+        h1 {
+            font-size:          var(--fontSize-theme-large);
+        }
+        p {
+            font-size:          var(--fontSize-theme-medium);
+        }
+        button {
+            position:           absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            opacity:            0;
+            cursor:             pointer;
+        }
+    }
+
+</style>

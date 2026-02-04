@@ -8,10 +8,7 @@
   "module": "NodeNext",
   "verbatimModuleSyntax": false,
     "paths": {
-      "@src/*": ["src/*"],
-      "@components/*": ["src/components/*"],
-      "@styles/*": ["src/styles/*"],
-      "@public/*": ["public/*"]
+      "@sites/*": ["src/sites/*"]
     }
   }
 }

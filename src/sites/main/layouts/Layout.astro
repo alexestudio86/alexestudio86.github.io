@@ -1,0 +1,25 @@
+---
+
+import BaseHead from "@sites/main/components/base/Head/index.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts.ts";
+import Navbar from "@sites/main/components/base/Navbar/index.astro";
+import menuItems from "@sites/main/components/base/Navbar/navbarItems.data.json";
+import brandLogo from "@sites/main/components/base/Navbar/logo-alexestudio86.png";
+import Footer from "@sites/main/components/base/Footer/index.astro";
+
+---
+
+<html lang="es">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+
+    <Navbar menuItems={menuItems}  brandLogo={brandLogo} />
+
+    <slot />
+
+    <Footer />
+
+  </body>
+</html>
